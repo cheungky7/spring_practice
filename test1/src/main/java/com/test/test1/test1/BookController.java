@@ -1,5 +1,7 @@
 package com.test.test1.test1;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,27 @@ public class BookController {
         testRepository.save(n);
         return "Saved";
     }
+
+    @PostMapping(path="/addjson") // Map ONLY POST Requests
+    public @ResponseBody String addNewBookByJson (  @RequestBody String str)  {
+        // @ResponseBody means the returned String is the response, not a view name
+        // @RequestParam means it is a parameter from the GET or POST request
+
+        System.out.println("json body : " + str);
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            Book n=objectMapper.readValue(str,Book.class);
+            testRepository.save(n);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        //Book n = new Book(name,author,isbn);
+        // n.setName(name);
+        // n.setEmail(email);
+
+        return "Saved";
+    }
+
 
 
 
