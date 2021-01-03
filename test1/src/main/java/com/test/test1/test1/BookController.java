@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 public class BookController {
@@ -23,6 +25,7 @@ public class BookController {
         Book n = new Book(name,author,isbn);
        // n.setName(name);
        // n.setEmail(email);
+        ObjectMapper Obj = new ObjectMapper();
         testRepository.save(n);
         return "Saved";
     }
@@ -45,6 +48,21 @@ public class BookController {
         // n.setEmail(email);
 
         return "Saved";
+    }
+
+    @PostMapping(path="/Book/all")
+    public @ResponseBody String getAllBook( ) {
+        List<Book> bookList= (List<Book>) testRepository.findAll();
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            String jsonString=objectMapper.writeValueAsString(bookList);
+            return jsonString;
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return "error";
+        }
+
+
     }
 
 
