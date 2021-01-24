@@ -61,8 +61,13 @@ public class BookController {
             e.printStackTrace();
             return "error";
         }
+    }
+
+    @PostMapping(path="/Book/search/author")
+    public @ResponseBody String searchByAuthor (  @RequestBody String str)  {
 
 
+        return "error";
     }
 
 
