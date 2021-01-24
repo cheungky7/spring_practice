@@ -7,10 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
-	
+	/*
 	@Autowired
 	public TennisCoach(FortuneService theFortuneService) {
 		fortuneService = theFortuneService;
+	}*/
+
+	public TennisCoach(){
+		System.out.println(">> TennisCoach: inside default constructor");
+	}
+
+	@Autowired
+	public void setFortuneService(FortuneService theFortuneService){
+		System.out.println(">> TennisCoach: inside default constructor");
+		fortuneService=theFortuneService;
 	}
 
 	@Override
