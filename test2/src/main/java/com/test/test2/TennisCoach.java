@@ -22,6 +22,12 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach: inside default constructor");
 		fortuneService=theFortuneService;
 	}
+	
+	@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService){
+		System.out.println(">> TennisCoach: inside doSomeCrazyStuff() method");
+		fortuneService=theFortuneService;
+	}
 
 	@Override
 	public String getDailyWorkout() {
