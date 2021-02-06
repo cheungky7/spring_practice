@@ -1,12 +1,15 @@
 package com.test.test1.test1;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Book {
+@Table(name = "book")
+@SqlResultSetMapping(
+        name="bookResult",
+        entities=@EntityResult(entityClass=Book.class)
+)
+public class Book  implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
