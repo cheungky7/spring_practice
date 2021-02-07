@@ -5,11 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "book")
-@SqlResultSetMapping(
-        name="bookResult",
-        entities=@EntityResult(entityClass=Book.class)
-)
-public class Book  implements Serializable {
+public class Book {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

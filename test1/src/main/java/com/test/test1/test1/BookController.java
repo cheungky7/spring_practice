@@ -69,17 +69,21 @@ public class BookController {
     @PostMapping(path="/Book/search/author")
     public @ResponseBody String searchByAuthor (  @RequestBody String str)  {
 
-
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Book> bookList=testRepository.searchBookByAuthor(str);
 
         try {
-            String jsonString=objectMapper.writeValueAsString(bookList);
-            return jsonString;
+            Book n=objectMapper.readValue(str,Book.class);
+            if(n.getAuthor()!=null) {
+                List<Book> bookList = testRepository.searchBookByAuthor(n.getAuthor());
+                String jsonString=objectMapper.writeValueAsString(bookList);
+                return jsonString;
+            }
         } catch (JsonProcessingException e) {
             e.printStackTrace();
-            return "error";
+
         }
+
+        return "error";
 
     }
 
