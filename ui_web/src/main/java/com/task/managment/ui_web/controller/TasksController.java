@@ -36,7 +36,7 @@ public class TasksController {
 	}
 	
 	
-	@RequestMapping(value="/add",method=RequestMethod.POST)
+	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String addTasks(@ModelAttribute("Task")Task task, 
 			   ModelMap model) {
 		
