@@ -7,25 +7,20 @@
 	<title>Add Task</title>
 </head>
 <body>
-    <form:form method="post" modelAttribute="Task" action="/add" id="myDIV">
-       <form:label path="tile">Name</form:label>
-       <form:input type="text" path="tile" />
+    <form:form method="post" modelAttribute="Task" action="add" id="myDIV">
+       <form:label path="title">Title</form:label>
+       <form:input type="text" path="title" />
        <br/>
        <br/>
-       <form:label path="content">Email</form:label>
+       <form:label path="content">Content</form:label>
        <form:input type="text" path="content" />
        <br/>
        <br/>
        <form:label path="deadline">Topic</form:label>
-       <form:input type="text" path="deadline" />
+       <form:input type="datetime-local" path="deadline" />
        <br/>
        <br/>
-       <form:input type="text" path="question" />
        <input type="submit" value="Submit" />
-       <br/>
-       <br/>
     </form:form>
-    
-    <button onclick="myFunction()">Try it</button>
 </body>
 </html>

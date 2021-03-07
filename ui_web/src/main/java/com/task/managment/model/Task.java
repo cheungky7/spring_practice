@@ -1,32 +1,42 @@
-package com.task.managment.model;
+ package com.task.managment.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Task {
 	
-	private Date deadline;
-	private Date assignedDate;
-	private String tile;
+	//private String  deadline;
+	//private String  assignedDate;
+	@DateTimeFormat(iso =  DateTimeFormat.ISO.DATE_TIME)
+	private LocalDateTime deadline;
+	
+	@DateTimeFormat(iso =  DateTimeFormat.ISO.DATE_TIME)
+	private LocalDateTime assignedDate;
+	
+	private String title;
 	private String content;
 	private String assignedTo;
 	private String assignedBy;
-	public Date getDeadline() {
+	public LocalDateTime getDeadline() {
 		return deadline;
 	}
-	public void setDeadline(Date deadline) {
+	public void setDeadline(LocalDateTime deadline) {
 		this.deadline = deadline;
 	}
-	public Date getAssignedDate() {
+	public LocalDateTime getAssignedDate() {
 		return assignedDate;
 	}
-	public void setAssignedDate(Date assignedDate) {
+	public void setAssignedDate(LocalDateTime assignedDate) {
 		this.assignedDate = assignedDate;
 	}
-	public String getTile() {
-		return tile;
+	public String getTitle() {
+		return title;
 	}
-	public void setTile(String tile) {
-		this.tile = tile;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getContent() {
 		return content;

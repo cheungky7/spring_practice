@@ -37,21 +37,18 @@ public class TasksController {
 	
 	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
+	public String showEditPage(@ModelAttribute("Task")Task task,
+			ModelMap model) {
+		return "AddTask";
+	}
+	
+	@RequestMapping(value="/add",method=RequestMethod.POST)
 	public String addTasks(@ModelAttribute("Task")Task task, 
 			   ModelMap model) {
 		
-		//boolean isValidUser=service.validateUser(name,password);
-		/*
-		if(!isValidUser) {
-			model.put("errorMessage", "Invalid Credentials");
-			return "login";
-		}
-		
-		model.put("name",name);*/
-		logger.info(task.getTile());
+		logger.info(task.getTitle());
 		logger.info(task.getContent());
-		//logger.info(task.getAssignedDate());
-		logger.info(task.getDeadline());
+		logger.info(task.getDeadline().toString());
 		
 		return "AddTask";
 	}
