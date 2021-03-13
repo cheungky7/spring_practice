@@ -4,64 +4,59 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-//import java.time.LocalDate;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.sql.Date;
+
+
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-@MappedTypes(LocalDateTime.class)
-@MappedJdbcTypes(JdbcType.DATE)
-//@MappedTypes({Date.class})
+
+
+//@MappedTypes(LocalDateTime.class)
+//@MappedJdbcTypes(JdbcType.TIMESTAMP)
 public class LocalDateTimeTypeHandler extends BaseTypeHandler<LocalDateTime>  {
-
-	@Override
-	public void setNonNullParameter(PreparedStatement ps, int i, LocalDateTime parameter, JdbcType jdbcType)
-			throws SQLException {
-		// TODO Auto-generated method stub
-		//ps.setDate(i, Date.valueOf(parameter));
-		java.util.Date temp=java.util.Date
-	      .from(parameter.atZone(ZoneId.systemDefault())
-	      .toInstant());
-		ps.setDate(i, Date.valueOf(temp.toString()));
-		
-	}
-
-	@Override
-	public LocalDateTime getNullableResult(ResultSet rs, String columnName) throws SQLException {
-		// TODO Auto-generated method stub
-		 Date date = rs.getDate(columnName);
-		 return getLocalDate(date);
-		
-	}
-
-	@Override
-	public LocalDateTime getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-		// TODO Auto-generated method stub
-		Date date = rs.getDate(columnIndex);
-	    return getLocalDate(date);
-		
-	}
-
-	@Override
-	public LocalDateTime getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-		// TODO Auto-generated method stub
-		Date date = cs.getDate(columnIndex);
-	    return getLocalDate(date);
-	}
 	
-	 private static LocalDateTime getLocalDate(Date date) {
-		    if (date != null) {
-		      return date.toInstant()
-		    	      .atZone(ZoneId.systemDefault())
-		    	      .toLocalDateTime();
-		    }
-		    return null;
-		  }
+	Logger logger = LogManager.getLogger(LocalDateTimeTypeHandler.class);
 
+	 @Override
+	  public void setNonNullParameter(PreparedStatement ps, int i, LocalDateTime parameter, JdbcType jdbcType)
+	      throws SQLException {
+	    ps.setTimestamp(i, Timestamp.valueOf(parameter));
+	  }
+
+	  @Override
+	  public LocalDateTime getNullableResult(ResultSet rs, String columnName) throws SQLException {
+	    Timestamp timestamp = rs.getTimestamp(columnName);
+	    logger.info("timestamp:"+timestamp);
+	    return getLocalDateTime(timestamp);
+	  }
+
+	  @Override
+	  public LocalDateTime getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+	    Timestamp timestamp = rs.getTimestamp(columnIndex);
+	    logger.info("timestamp:"+timestamp);
+	    return getLocalDateTime(timestamp);
+	  }
+
+	  @Override
+	  public LocalDateTime getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+	    Timestamp timestamp = cs.getTimestamp(columnIndex);
+	    logger.info("timestamp:"+timestamp);
+	    return getLocalDateTime(timestamp);
+	  }
+
+	  private static LocalDateTime getLocalDateTime(Timestamp timestamp) {
+		  
+	    if (timestamp != null) {
+	      return timestamp.toLocalDateTime();
+	      
+	    }
+	    return null;
+	  }
 }

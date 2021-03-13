@@ -14,8 +14,8 @@
 			<th>content</th>
 			<th>assignedTo</th>
 			<th>assignedBy</th>
-			<!-- <th>deadline</th>
-			<th>assignedDate</th>-->
+			<th>deadline</th>
+			<th>assignedDate</th>
 			</tr>
 			<c:forEach items="${Tasks}" var="task" varStatus="tagStatus">
 			  <tr>
@@ -23,8 +23,8 @@
 			    <td>${task.content}</td>
 			    <td>${task.assignedTo}</td>
 			    <td>${task.assignedBy}</td>
-			    <!--  <td>${Task.deadline}</td> 
-			    <td>${Task.assignedDate}</td>-->
+			    <td>${task.deadline}</td> 
+			    <td>${task.assignedDate}</td>
 			  </tr>
 			</c:forEach>
 		</table>
