@@ -3,9 +3,11 @@
 <mapper namespace="com.example.demo_jsp.mapper.BookMapper" >
  	<resultMap id="BaseResultMap" type="com.example.demo_jsp.model.Book" >
         <id column="id" property="id"  />
-        <result column="name" property="name" />
-        <result column="author" property="author"  />
-        <result column="isbn" property="isbn" />
+        <result column="title" property="title" />
+        <result column="content" property="content"  />
+        <result column="assignedto" property="isbn" />
+        <result column="assignedby" property="isbn" />
+        <result column="deadline" property="isbn" />
     </resultMap>
 	 <sql id="Base_Column_List" >
         id, name, author, isbn

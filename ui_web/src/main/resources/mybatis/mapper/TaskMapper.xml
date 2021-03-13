@@ -6,14 +6,14 @@
         <result column="title" property="title" />
         <result column="content" property="content"  />
         <result column="assignedto" property="assignedTo" />
-        <result column="assignedby" property="assignedBy" />
-        <result column="deadline" property="deadline" />
-        <result column="assigneddate" property="assignedDate" />
+        <result column="assignedby" property="assignedBy"/>
+        <!--<result column="deadline" property="deadline" typeHandler="com.task.management.ui_web.dao.TypeHandler.LocalDateTimeTypeHandler"/>
+        <result column="assigneddate" property="assignedDate" typeHandler="com.task.management.ui_web.dao.TypeHandler.LocalDateTimeTypeHandler" />-->
     </resultMap>
     
      <select id="getListOfTasks" resultMap="TasksList"  >
        SELECT 
-       title,content,assignedto,assignedby,deadline,assigneddate
+       title,content,assignedto,assignedby
 	   FROM test.tasklist
     </select>
 	
