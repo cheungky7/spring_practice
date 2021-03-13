@@ -2,6 +2,8 @@ package com.task.management.ui_web.controller;
 
 
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,16 @@ public class TasksController {
 		return "Enquiry";
 	}
 	
+	@RequestMapping(value="/list",method=RequestMethod.GET)
+	public String showTaskList(ModelMap model) {
+		
+		//model
+		List<Task> tasks = taskService.getListOfTasks();
+		model.addAttribute("Tasks", tasks);
+		
+		return "ListTask";
+	}
+	
 	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String showEditPage(@ModelAttribute("Task")Task task,
@@ -57,7 +69,7 @@ public class TasksController {
 		
 		taskService.addNewTask(task);
 		
-		return "AddTask";
+		return "AddTaskSuccess";
 	}
 
 }

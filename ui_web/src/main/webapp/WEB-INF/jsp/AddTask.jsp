@@ -16,7 +16,7 @@
        <form:input type="text" path="content" />
        <br/>
        <br/>
-       <form:label path="deadline">Topic</form:label>
+       <form:label path="deadline">Deadline</form:label>
        <form:input type="datetime-local" path="deadline" />
        <br/>
        <br/>

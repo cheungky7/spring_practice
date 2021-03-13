@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.task.management.ui_web.dao.mapper.TaskMapper" >
+	<resultMap id="TasksList" type="com.task.management.ui_web.model.Task" >
+        <id column="id" property="id"  />
+        <result column="title" property="title" />
+        <result column="content" property="content"  />
+        <result column="assignedto" property="assignedTo" />
+        <result column="assignedby" property="assignedBy" />
+        <result column="deadline" property="deadline" />
+        <result column="assigneddate" property="assignedDate" />
+    </resultMap>
+    
+     <select id="getListOfTasks" resultMap="TasksList"  >
+       SELECT 
+       title,content,assignedto,assignedby,deadline,assigneddate
+	   FROM test.tasklist
+    </select>
+	
 	<insert id="insert"   parameterType="com.task.management.ui_web.model.Task">
 	  insert into test.tasklist ( title, content, assignedTo, assignedBy, deadline,assignedDate)
 	  values (#{title},#{content},#{assignedTo},#{assignedBy},#{deadline},#{assignedDate})
