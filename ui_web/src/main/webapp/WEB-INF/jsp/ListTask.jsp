@@ -6,9 +6,10 @@
 <html>
 <head>
 	<title>List Task</title>
+	  <link href="${pageContext.request.contextPath}/resources/css/table.css" rel="stylesheet">
 </head>
 	<body>
-		<table>
+		<!-- <table>
 			<tr>
 			<th>title</th>
 			<th>content</th>
@@ -27,6 +28,28 @@
 			    <td>${task.assignedDate}</td>
 			  </tr>
 			</c:forEach>
-		</table>
+		</table> -->
+		<div class="listTable-wrapper">
+			<div class="listTable-wrapper">
+				<div class="row">
+					<div class="column_head">title</div>
+					<div class="column_head">content</div>
+					<div class="column_head">assignedTo</div>
+					<div class="column_head">assignedBy</div>
+					<div class="column_head">deadline</div>
+					<div class="column_head">assignedDate</div>
+				</div>
+				<c:forEach items="${Tasks}" var="task" varStatus="tagStatus">
+				  <div class="row">
+				    <div class="column">${task.title}</div>
+				    <div class="column">${task.content}</div>
+				   	<div class="column">${task.assignedTo}</div>
+				    <div class="column">${task.assignedBy}</div>
+				    <div class="column">${task.deadline}</div>
+				    <div class="column">${task.assignedDate}</div>
+				  </div>
+				</c:forEach>
+			</div>
+		</div>
 	</body>
 </html>

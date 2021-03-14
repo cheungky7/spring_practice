@@ -1,0 +1,35 @@
+
+
+.listTable-wrapper {
+  margin: 15px;
+}
+/*
+.listTable-wrapper .row_head {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}*/
+
+.listTable-wrapper .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.listTable-wrapper .column_head {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  background: gray;
+}
+
+
+.listTable-wrapper .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
