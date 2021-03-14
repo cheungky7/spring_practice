@@ -9,27 +9,6 @@
 	  <link href="${pageContext.request.contextPath}/resources/css/table.css" rel="stylesheet">
 </head>
 	<body>
-		<!-- <table>
-			<tr>
-			<th>title</th>
-			<th>content</th>
-			<th>assignedTo</th>
-			<th>assignedBy</th>
-			<th>deadline</th>
-			<th>assignedDate</th>
-			</tr>
-			<c:forEach items="${Tasks}" var="task" varStatus="tagStatus">
-			  <tr>
-			    <td>${task.title}</td>
-			    <td>${task.content}</td>
-			    <td>${task.assignedTo}</td>
-			    <td>${task.assignedBy}</td>
-			    <td>${task.deadline}</td> 
-			    <td>${task.assignedDate}</td>
-			  </tr>
-			</c:forEach>
-		</table> -->
-		<div class="listTable-wrapper">
 			<div class="listTable-wrapper">
 				<div class="row">
 					<div class="column_head">title</div>
@@ -50,6 +29,5 @@
 				  </div>
 				</c:forEach>
 			</div>
-		</div>
 	</body>
 </html>

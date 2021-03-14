@@ -29,14 +29,14 @@ public class TasksController {
 	@Autowired
 	TasksService taskService;
 	
-	
+	/*
 	@RequestMapping(value="/enquiry",method=RequestMethod.GET)
 	public String showLoginPage(ModelMap model) {
 		
 		//model
 		
 		return "Enquiry";
-	}
+	}*/
 	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public String showTaskList(ModelMap model) {
