@@ -9,7 +9,7 @@
 </head>
 	<body>
 		 <form:form method="post"  action="login" id="myDIV">
-		 <div class="listTable-wrapper">
+		 <div class="loginTable-wrapper" align="center">
 		   	<div class="row">
 		   		<div class="column_head">
 		       		User Name

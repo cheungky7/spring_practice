@@ -3,13 +3,6 @@
 .listTable-wrapper {
   margin: 15px;
 }
-/*
-.listTable-wrapper .row_head {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}*/
 
 .listTable-wrapper .row {
   display: flex;
@@ -31,5 +24,35 @@
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
+  flex: 1;
+}
+
+
+.loginTable-wrapper {
+  margin: auto;
+  
+}
+
+.loginTable-wrapper .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 500px;
+  width: 100%;
+}
+
+.loginTable-wrapper .column_head {
+  display: flex;
+  flex-direction: column;
+   width:100%;
+  flex: 1;
+  background: gray;
+}
+
+
+.loginTable-wrapper .column {
+  display: flex;
+  flex-direction: column;
+  width:100%;
   flex: 1;
 }
