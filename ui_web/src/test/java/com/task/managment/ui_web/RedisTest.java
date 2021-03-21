@@ -8,6 +8,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.task.management.ui_web.UiWebApplication;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,9 +18,9 @@ import org.junit.runner.RunWith;
 //import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
-//@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 //@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringBootTest
+@SpringBootTest(classes = UiWebApplication.class)
 public class RedisTest {
 	
 		Logger logger = LogManager.getLogger(RedisTest.class);
