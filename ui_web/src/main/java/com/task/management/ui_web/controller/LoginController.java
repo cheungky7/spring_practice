@@ -20,7 +20,7 @@ public class LoginController {
 		
 		return "login";
 	}
-	
+	/*
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String submitLoginPage(@RequestParam String name,
 			@RequestParam String password,
@@ -28,7 +28,7 @@ public class LoginController {
 		
 		
 		return "MainMenu";
-	}
+	}*/
 	
 
 }

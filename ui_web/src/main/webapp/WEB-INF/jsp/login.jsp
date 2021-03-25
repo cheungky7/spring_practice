@@ -8,14 +8,14 @@
 	<link href="${pageContext.request.contextPath}/resources/css/table.css" rel="stylesheet">
 </head>
 	<body>
-		 <form:form method="post"  action="login" id="myDIV">
+		 <form method="POST" name='f' action="perform_login" id="myDIV">
 		 <div class="loginTable-wrapper" align="center">
 		   	<div class="row">
 		   		<div class="column_head">
 		       		User Name
 		       	</div>
 		       	<div class="column">
-		       		<input type="text" name="userName" />
+		       		<input type="text" name="username" />
 		       	</div>
 		   	</div>
 		   	<div class="row">
@@ -34,6 +34,6 @@
 		        </div>
 		    </div>
 		 </div>
-    	</form:form>
+    	</form>
 	</body>
 </html>
