@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         .antMatchers(HttpMethod.GET).permitAll()
         .and()
         .csrf().disable().formLogin().loginPage("/auth/login")
-        .loginProcessingUrl("/auth/perform_login").defaultSuccessUrl("/task/list", true).permitAll();
+        .loginProcessingUrl("/auth/perform_login").defaultSuccessUrl("/menu/main", true).permitAll();
          
 	
     }

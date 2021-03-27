@@ -10,5 +10,9 @@
 </head>
 	<body>
 		<div>Main menu</div>
+		<br/>
+		<a href="/task/list">List of Tasks</a>
+		<br/>
+		<a href="/task/add">add Tasks</a>
 	</body>
 </html>
