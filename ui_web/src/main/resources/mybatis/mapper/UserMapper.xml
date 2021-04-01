@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.task.management.ui_web.dao.mapper.UserMapper" >
+	<resultMap id="User" type="com.task.management.ui_web.model.User" >
+        <id column="id" property="id"  />
+        <result column="username" property="username" />
+        <result column="password" property="password"  />
+        <result column="title" property="title" />
+        <result column="department" property="department"/>
+    </resultMap>
+    
+     <select id="getUserByUsername" resultMap="User"  >
+       SELECT 
+       username,password,title,department
+	   FROM test.users WHERE username=#{username};
+    </select>
+
+</mapper>
