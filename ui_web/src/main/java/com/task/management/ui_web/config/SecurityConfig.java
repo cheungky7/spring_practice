@@ -39,10 +39,10 @@ class PlainTextPasswordEncoder implements PasswordEncoder {
     	String temp= charSequence.toString();
     	logger.info("Input password: "+temp);
     	logger.info("Storaged password: "+s);
-    	String test="123";
+    	//String test="123";
     	// java string do not match with password column with data type character(255) even the value is the same,
     	// change to character varying(1024) is ok but i do not know why
-    	logger.info(test.compareTo(s));
+    	//logger.info(test.compareTo(s));
     	//logger.info(temp.compareToIgnoreCase(s));
     	boolean isMatch=temp.equals(s);
     	logger.info(isMatch);
@@ -81,15 +81,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 	
-		/*
+		
 		http.authorizeRequests()
-		.antMatchers(HttpMethod.GET, "/task/**").hasRole("User")
-        .antMatchers(HttpMethod.POST,"/task/**").hasRole("User")
+		.antMatchers(HttpMethod.GET, "/task/**").authenticated()
+        .antMatchers(HttpMethod.POST,"/task/**").authenticated()
         .antMatchers(HttpMethod.GET).permitAll()
         .and()
         .csrf().disable().formLogin().loginPage("/auth/login")
         .loginProcessingUrl("/auth/perform_login").defaultSuccessUrl("/menu/main", true).permitAll();
-         */
+        
 		/*
 		http.authorizeRequests()
 		.antMatchers(HttpMethod.GET, "/task/**").hasRole("User")
@@ -99,13 +99,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         .csrf().disable().formLogin();*/
 		
 		
-		
+		/*
 		http.authorizeRequests()
 		.antMatchers(HttpMethod.GET, "/task/**").authenticated()
         .antMatchers(HttpMethod.POST,"/task/**").authenticated()
         .antMatchers(HttpMethod.GET).permitAll()
         .and()
-        .csrf().disable().formLogin();
+        .csrf().disable().formLogin();*/
 	
     }
 
