@@ -37,7 +37,7 @@
 		 	<h1>Login</h1>
 		 	<input type="text" name="username" class="username" value="Username" 
 		 		onFocus="field_focus(this, 'Username');" onblur="field_blur(this, 'Username');" />
-		 	<input type="text" name="password" class="password"
+		 	<input type="password" name="password" class="password"
 		 		onFocus="field_focus(this, 'Username');" onblur="field_blur(this, 'Username');" />
 		 	<input type="submit" value="Submit" class="btn" />
 		 	<!--  <input value="clear" id="btn2"/>-->
