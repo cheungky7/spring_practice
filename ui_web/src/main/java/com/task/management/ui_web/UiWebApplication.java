@@ -12,10 +12,10 @@ public class UiWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UiWebApplication.class, args);
 	}
-	
+	/*
 	  public void addResourceHandlers(final ResourceHandlerRegistry registry) {
 	        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
-	    }
+	    }*/
 	
 
 }
