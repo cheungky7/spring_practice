@@ -6,13 +6,13 @@
 <html>
 <head>
 	<title>Main menu</title>
-	  <link href="${pageContext.request.contextPath}/resources/css/table.css" rel="stylesheet">
+	 <link href="${pageContext.request.contextPath}/resources/css/table.css" rel="stylesheet">
 </head>
 	<body>
 		<div>Main menu</div>
 		<br/>
-		<a href="/task/list">List of Tasks</a>
+		<a href="${pageContext.request.contextPath}/task/list">List of Tasks</a>
 		<br/>
-		<a href="/task/add">add Tasks</a>
+		<a href="${pageContext.request.contextPath}/task/add">add Tasks</a>
 	</body>
 </html>
