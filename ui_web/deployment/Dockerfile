@@ -11,6 +11,7 @@ RUN tar -xvf apache-tomcat-9.0.45.tar.gz
 RUN mv apache-tomcat-9.0.45/* /opt/tomcat/.
 ENV CATALINA_HOME=/opt/tomcat
 ENV CATALINA_BASE=/opt/tomcat
+COPY ui_web-0.0.1-SNAPSHOT.war /opt/tomcat/webapps/ui_web.war
 
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh","run"]
